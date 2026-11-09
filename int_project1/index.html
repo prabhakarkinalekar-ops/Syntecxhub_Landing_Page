@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pulse AI — Autonomous Deployment & Real-Time Telemetry Platform</title>
+  <meta name="description" content="Empower engineering teams with autonomous deployment pipelines, edge telemetry, and enterprise-grade security." />
+  
+  <!-- Google Fonts: Plus Jakarta Sans, DM Sans & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400..700;1,9..40,400..700&family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  
+  <!-- Unified Design System Stylesheet -->
+  <link rel="stylesheet" href="pages.css" />
+  
+  <!-- Interactive Script -->
+  <script src="pages.js" defer></script>
+</head>
+<body>
+
+  <!-- ====================================================================== -->
+  <!-- 1. STICKY UNIFIED HEADER & NAVIGATION                                   -->
+  <!-- ====================================================================== -->
+  <header class="site-header">
+    <div class="nav-shell">
+      <!-- Brand Logo -->
+      <a class="brand" href="index.html" aria-label="Pulse AI Home">
+        <span class="brand-mark" aria-hidden="true">ϟ</span>
+        Pulse<em>AI</em>
+      </a>
+
+      <!-- Navigation Pill Links -->
+      <nav class="site-nav" id="mainNav" aria-label="Main Navigation">
+        <a href="index.html" aria-current="page">Overview</a>
+        <a href="explore.html">Explore</a>
+        <a href="plans.html">Plans</a>
+        <a href="about.html">About</a>
+      </nav>
+
+      <!-- Right Actions: Status & Primary CTA -->
+      <div class="nav-actions">
+        <div class="nav-status">
+          <span class="status-dot"></span>
+          <span>99.98% Uptime</span>
+        </div>
+        <button class="nav-cta open-onboarding-btn" data-plan="Free Trial">
+          Start Free Trial <span aria-hidden="true">→</span>
+        </button>
+        <button class="menu-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false" aria-controls="mainNav">
+          ☰
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ==================================================================== -->
+    <!-- 2. HERO SECTION WITH TELEMETRY DASHBOARD                             -->
+    <!-- ==================================================================== -->
+    <section class="hero-wrap">
+      <!-- Ambient Glow Orbs -->
+      <div class="hero-glow-1"></div>
+      <div class="hero-glow-2"></div>
+
+      <div class="wrap hero-grid">
+        <!-- Hero Left: Copy & Actions -->
+        <div>
+          <!-- Live Announcement Badge -->
+          <div class="hero-badge">
+            <span class="badge-ping"></span>
+            <span>Pulse AI Engine v4.2 Live</span>
+            <span style="color: var(--muted-light)">•</span>
+            <span style="color: var(--ink-secondary)">Autonomous Pipelines</span>
+          </div>
+
+          <!-- Hero Headline with Mathematical Hierarchy -->
+          <h1 class="page-heading">
+            Build, ship &amp; scale at <span>lightning speed</span>
+          </h1>
+
+          <p class="lede">
+            Empower your engineering teams with autonomous self-healing deployment pipelines, real-time edge telemetry, and enterprise-grade security built directly into your git workflow.
+          </p>
+
+          <!-- Interactive CTAs -->
+          <div class="hero-actions">
+            <button class="button lg open-onboarding-btn" data-plan="Free Trial">
+              <span>Start 14-Day Free Trial</span>
+              <span aria-hidden="true">→</span>
+            </button>
+            <button class="button lg secondary open-demo-btn" id="openDemoBtn">
+              <span style="font-size: 16px;">▶</span>
+              <span>Watch 2-Min Demo</span>
+            </button>
+          </div>
+
+          <!-- Social Proof & Team Trust -->
+          <div class="hero-proof">
+            <div class="avatar-stack">
+              <span class="avatar-fallback" style="background:#5e54e0;">JD</span>
+              <span class="avatar-fallback" style="background:#06b6d4;">AK</span>
+              <span class="avatar-fallback" style="background:#9333ea;">MR</span>
+              <span class="avatar-fallback" style="background:#10b981;">+4k</span>
+            </div>
+            <div class="proof-meta">
+              <div class="proof-stars">★★★★★</div>
+              <div class="proof-text">Loved by <strong>4,000+</strong> engineering teams worldwide</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero Right: Interactive Telemetry Core Card -->
+        <div>
+          <div class="telemetry-card">
+            <!-- Card Header -->
+            <div class="card-topbar">
+              <div class="card-title-group">
+                <div class="card-icon">⚡</div>
+                <div>
+                  <h3>Telemetry Core</h3>
+                  <p>Real-time cluster & edge metrics</p>
+                </div>
+              </div>
+              <span class="badge-node">Active Node</span>
+            </div>
+
+            <!-- Key Metric Counters -->
+            <div class="metric-row">
+              <div class="metric-tile">
+                <span class="label">Deployment Velocity</span>
+                <div class="val-group">
+                  <span class="val primary">+324%</span>
+                  <span class="tag">↑ Peak</span>
+                </div>
+              </div>
+              <div class="metric-tile">
+                <span class="label">Edge Latency</span>
+                <div class="val-group">
+                  <span class="val">14.2ms</span>
+                  <span class="tag" style="color:var(--primary);">Optimal</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Interactive Sparkline / Bar Chart -->
+            <div class="chart-container">
+              <div class="chart-header">
+                <strong>Throughput &amp; Health Rate</strong>
+                <span id="liveThroughputDisplay">99.98% Success</span>
+              </div>
+              <div class="bars-track">
+                <div class="bar-col" style="height: 42%;" data-val="12,400"><div class="tooltip">12.4k req/s</div></div>
+                <div class="bar-col" style="height: 58%;" data-val="18,100"><div class="tooltip">18.1k req/s</div></div>
+                <div class="bar-col" style="height: 36%;" data-val="9,800"><div class="tooltip">9.8k req/s</div></div>
+                <div class="bar-col" style="height: 76%;" data-val="24,600"><div class="tooltip">24.6k req/s</div></div>
+                <div class="bar-col" style="height: 62%;" data-val="19,500"><div class="tooltip">19.5k req/s</div></div>
+                <div class="bar-col" style="height: 88%;" data-val="28,200"><div class="tooltip">28.2k req/s</div></div>
+                <div class="bar-col peak" style="height: 100%;" data-val="32,450"><div class="tooltip">32.4k req/s</div></div>
+              </div>
+            </div>
+
+            <!-- Live Status Indicator -->
+            <div class="card-footer">
+              <span class="status">
+                <span class="status-dot"></span> All 18 edge clusters healthy
+              </span>
+              <span>Sync: 0.1s ago</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================================================================== -->
+    <!-- 3. INTERACTIVE AI AUTOMATION PLAYGROUND / SIMULATOR                  -->
+    <!-- ==================================================================== -->
+    <section class="simulator-section">
+      <div class="wrap">
+        <div class="simulator-box">
+          <div class="simulator-header">
+            <div>
+              <span class="eyebrow" style="color:var(--accent-cyan);">Real-Time Simulator</span>
+              <h2 style="font-family:var(--font-display); font-size:24px; font-weight:800; margin-top:6px; color:#ffffff;">
+                Test Autonomous AI Pipeline Responses
+              </h2>
+            </div>
+            <span class="code-token" style="background:#1e293b; color:#38bdf8; border-color:#334155;">
+              CLI v4.2.0 • Ready
+            </span>
+          </div>
+
+          <!-- Prompt Preset Chips -->
+          <div class="simulator-prompt-chips">
+            <button class="prompt-chip active" data-action="autoscale">
+              ⚡ Trigger 300% Traffic Spike
+            </button>
+            <button class="prompt-chip" data-action="rollback">
+              🛡️ Anomaly Detected: Auto-Rollback
+            </button>
+            <button class="prompt-chip" data-action="edge">
+              🌐 Instant Global Edge Propagation
+            </button>
+          </div>
+
+          <!-- Terminal Output -->
+          <div class="terminal-window">
+            <div class="terminal-chrome">
+              <span class="term-dot red"></span>
+              <span class="term-dot yellow"></span>
+              <span class="term-dot green"></span>
+              <span style="margin-left: 8px;">pulse-orchestrator — live-cluster-preview</span>
+            </div>
+            <div class="terminal-body" id="simulatorTerminalLog">
+              <span class="term-dim">// [00:00.12] Telemetry hook received: Traffic spike +320% on US-East</span><br>
+              <span class="term-cyan">&gt; pulse.scale(target: "web-fleet", strategy: "predictive")</span><br>
+              <span class="term-dim">-- Provisioning 12 new worker nodes on AWS &amp; Fly.io</span><br>
+              <span class="term-dim">-- Health checks passed across all 12 instances (lat: 8.2ms)</span><br>
+              <span class="term-green">✓ Auto-scale completed in 0.42s with ZERO latency degradation.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================================================================== -->
+    <!-- 4. CORE CAPABILITIES (3-COLUMN FEATURE GRID)                         -->
+    <!-- ==================================================================== -->
+    <section class="features-section">
+      <div class="wrap">
+        <div style="text-align: center; max-w: 640px; margin: 0 auto;">
+          <span class="eyebrow">Core Capabilities</span>
+          <h2 class="section-title" style="margin-top: 10px;">Engineered for absolute performance</h2>
+          <p class="section-copy" style="max-width: 580px; margin: 12px auto 0;">
+            Everything your team needs to orchestrate hyper-scale cloud applications without operational friction.
+          </p>
+        </div>
+
+        <div class="features-grid">
+          <!-- Feature 1: Instant Automation -->
+          <article class="feature-card">
+            <div>
+              <div class="feature-top">
+                <div class="feature-icon-wrap">⚡</div>
+                <span class="feature-tag">Zero-Config</span>
+              </div>
+              <h3>Instant Automation</h3>
+              <p>Deploy intelligent self-healing pipelines that automatically test, stage, and roll out canary updates with zero manual intervention.</p>
+            </div>
+            <a class="feature-link" href="explore.html">
+              <span>Explore deploy templates</span>
+              <span aria-hidden="true">→</span>
+            </a>
+          </article>
+
+          <!-- Feature 2: Real-time Telemetry -->
+          <article class="feature-card">
+            <div>
+              <div class="feature-top">
+                <div class="feature-icon-wrap" style="color:var(--accent-purple); background:#f5f3ff;">📊</div>
+                <span class="feature-tag">Sub-millisecond</span>
+              </div>
+              <h3>Real-Time Telemetry</h3>
+              <p>Stream sub-millisecond metrics directly from production edge nodes into customizable visual dashboards with automated anomaly detection.</p>
+            </div>
+            <a class="feature-link" href="explore.html">
+              <span>View telemetry templates</span>
+              <span aria-hidden="true">→</span>
+            </a>
+          </article>
+
+          <!-- Feature 3: Enterprise Shield -->
+          <article class="feature-card">
+            <div>
+              <div class="feature-top">
+                <div class="feature-icon-wrap" style="color:var(--accent-emerald); background:#ecfdf5;">🛡️</div>
+                <span class="feature-tag">SOC2 Type II</span>
+              </div>
+              <h3>Enterprise Shield</h3>
+              <p>Bank-grade encryption at rest and in transit combined with fine-grained RBAC, secret rotation, and continuous compliance auditing.</p>
+            </div>
+            <a class="feature-link" href="explore.html">
+              <span>Review security guardrails</span>
+              <span aria-hidden="true">→</span>
+            </a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================================================================== -->
+    <!-- 5. INTERACTIVE PERSONA / WORKFLOW SHOWCASE                           -->
+    <!-- ==================================================================== -->
+    <section class="persona-section">
+      <div class="wrap">
+        <div style="text-align: center;">
+          <span class="eyebrow">Tailored Experience</span>
+          <h2 class="section-title" style="margin-top: 10px;">Built for the entire engineering squad</h2>
+          <p class="section-copy" style="max-width: 580px; margin: 12px auto 0;">
+            See how Pulse AI seamlessly adapts to your team’s roles.
+          </p>
+        </div>
+
+        <!-- Persona Tabs Buttons -->
+        <div class="persona-tabs-nav">
+          <button class="persona-tab-btn active" data-persona="devops">
+            <span>⚙️ Platform &amp; DevOps</span>
+          </button>
+          <button class="persona-tab-btn" data-persona="developers">
+            <span>💻 Full-Stack Developers</span>
+          </button>
+          <button class="persona-tab-btn" data-persona="leaders">
+            <span>📈 Engineering Leaders</span>
+          </button>
+        </div>
+
+        <!-- Persona Tab 1: DevOps -->
+        <div class="persona-tab-content active" id="persona-devops">
+          <div>
+            <h3 style="font-family:var(--font-display); font-size:24px; font-weight:800; margin-bottom:12px;">
+              Declarative Infrastructure as Code
+            </h3>
+            <p style="color:var(--muted); font-size:15px; line-height:1.7; margin-bottom:20px;">
+              Define your clusters, preview environments, and routing rules with clean YAML or Terraform primitives. Let Pulse handle dynamic auto-scaling and certificate renewals.
+            </p>
+            <ul class="feature-list" style="margin-top:0; padding-top:16px;">
+              <li>Automatic Kubernetes pod autoscaling</li>
+              <li>Multi-cloud failover across AWS, GCP, and Fly.io</li>
+              <li>Automated DNS and TLS 1.3 wildcard handoff</li>
+            </ul>
+          </div>
+          <div style="background:#090d16; border-radius:14px; padding:20px; font-family:var(--font-mono); font-size:12px; color:#cbd5e1; border:1px solid rgba(255,255,255,0.1);">
+            <div style="color:#64748b; margin-bottom:10px;"># pulse-pipeline.yml</div>
+            <div style="color:#38bdf8;">deploy:</div>
+            <div style="padding-left:14px; color:#e2e8f0;">strategy: <span style="color:#10b981;">canary</span></div>
+            <div style="padding-left:14px; color:#e2e8f0;">weight_step: <span style="color:#f59e0b;">25%</span></div>
+            <div style="padding-left:14px; color:#e2e8f0;">health_check: <span style="color:#a855f7;">"/api/healthz"</span></div>
+            <div style="padding-left:14px; color:#e2e8f0;">auto_rollback: <span style="color:#10b981;">true</span></div>
+          </div>
+        </div>
+
+        <!-- Persona Tab 2: Full-Stack Developers -->
+        <div class="persona-tab-content" id="persona-developers">
+          <div>
+            <h3 style="font-family:var(--font-display); font-size:24px; font-weight:800; margin-bottom:12px;">
+              Ship from Git in Under 10 Seconds
+            </h3>
+            <p style="color:var(--muted); font-size:15px; line-height:1.7; margin-bottom:20px;">
+              Push code to any branch and get a production-ready preview URL with database branch replication and instant log streaming directly in your terminal.
+            </p>
+            <ul class="feature-list" style="margin-top:0; padding-top:16px;">
+              <li>Automated branch preview deployments</li>
+              <li>Instant cache invalidation worldwide</li>
+              <li>Real-time telemetry and error tracing</li>
+            </ul>
+          </div>
+          <div style="background:#090d16; border-radius:14px; padding:20px; font-family:var(--font-mono); font-size:12px; color:#cbd5e1; border:1px solid rgba(255,255,255,0.1);">
+            <div style="color:#64748b; margin-bottom:10px;">$ git push origin feature/checkout</div>
+            <div style="color:#10b981;">✓ Built bundle in 2.1s (Next.js 15)</div>
+            <div style="color:#38bdf8;">→ Preview ready: https://pr-42.pulse.app</div>
+            <div style="color:#cbd5e1; margin-top:10px;">Latency: 11ms • Global edge active</div>
+          </div>
+        </div>
+
+        <!-- Persona Tab 3: Leaders -->
+        <div class="persona-tab-content" id="persona-leaders">
+          <div>
+            <h3 style="font-family:var(--font-display); font-size:24px; font-weight:800; margin-bottom:12px;">
+              Total Visibility, SLA Guarantees &amp; Compliance
+            </h3>
+            <p style="color:var(--muted); font-size:15px; line-height:1.7; margin-bottom:20px;">
+              Monitor developer velocity, Dora metrics, and cloud spend in real-time. Keep every engineering squad compliant with built-in SOC 2 Type II audit logs.
+            </p>
+            <ul class="feature-list" style="margin-top:0; padding-top:16px;">
+              <li>Live DORA metrics dashboard (MTTR, Lead Time)</li>
+              <li>Cost optimization recommendations with 1-click apply</li>
+              <li>Automated audit-ready compliance reports</li>
+            </ul>
+          </div>
+          <div style="background:#090d16; border-radius:14px; padding:20px; font-family:var(--font-mono); font-size:12px; color:#cbd5e1; border:1px solid rgba(255,255,255,0.1);">
+            <div style="color:#64748b; margin-bottom:10px;">// Executive Squad Metrics</div>
+            <div style="color:#10b981;">Deployment Frequency: 18.4 / day (High)</div>
+            <div style="color:#38bdf8;">Change Failure Rate: 0.12% (Elite)</div>
+            <div style="color:#f59e0b;">Monthly Cloud Savings: $4,280.00</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================================================================== -->
+    <!-- 6. CUSTOMER TESTIMONIAL SECTION                                      -->
+    <!-- ==================================================================== -->
+    <section class="testimonial-section">
+      <div class="wrap">
+        <div class="testimonial-card-lg">
+          <div class="testimonial-avatar" style="background: linear-gradient(135deg, #5e54e0, #06b6d4); display: grid; place-items: center; color: white; font-size: 42px; font-weight: 800;">
+            MV
+          </div>
+          <div>
+            <div style="color:#f59e0b; font-size:16px; margin-bottom:12px; letter-spacing:2px;">
+              ★★★★★
+            </div>
+            <p class="testimonial-quote">
+              “Pulse AI completely transformed how our engineering squads ship code. We reduced deployment overhead by 70% in the first week alone, and our incident response time dropped to near zero.”
+            </p>
+            <div class="testimonial-author">
+              <strong>Marcus Vance</strong>
+              <span>VP of Engineering at HyperScale (450+ Engineers)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================================================================== -->
+    <!-- 7. FREQUENTLY ASKED QUESTIONS (ACCORDION)                            -->
+    <!-- ==================================================================== -->
+    <section class="faq-section">
+      <div class="wrap">
+        <div style="text-align: center;">
+          <span class="eyebrow">Got Questions?</span>
+          <h2 class="section-title" style="margin-top: 10px;">Frequently Asked Questions</h2>
+          <p class="section-copy" style="max-width: 580px; margin: 12px auto 0;">
+            Everything you need to know about getting started with Pulse AI.
+          </p>
+        </div>
+
+        <div class="faq-list">
+          <!-- FAQ 1 -->
+          <div class="faq-item open">
+            <button class="faq-question" type="button" aria-expanded="true">
+              <span>How quickly can we integrate Pulse AI into our existing CI/CD pipelines?</span>
+              <span class="faq-icon">▼</span>
+            </button>
+            <div class="faq-answer">
+              Integration takes less than 15 minutes. Pulse AI provides drop-in plugins for GitHub Actions, GitLab CI, and standard Kubernetes clusters without requiring structural codebase refactoring.
+            </div>
+          </div>
+
+          <!-- FAQ 2 -->
+          <div class="faq-item">
+            <button class="faq-question" type="button" aria-expanded="false">
+              <span>Is production telemetry data encrypted and compliant?</span>
+              <span class="faq-icon">▼</span>
+            </button>
+            <div class="faq-answer">
+              Yes. We adhere strictly to SOC 2 Type II, GDPR, and HIPAA standards. All telemetry streams are encrypted in transit with TLS 1.3 and at rest with AES-256 with custom enterprise key management options.
+            </div>
+          </div>
+
+          <!-- FAQ 3 -->
+          <div class="faq-item">
+            <button class="faq-question" type="button" aria-expanded="false">
+              <span>Can we run custom AI models for automated testing and canary evaluation?</span>
+              <span class="faq-icon">▼</span>
+            </button>
+            <div class="faq-answer">
+              Absolutely. Enterprise tiers allow you to plug in fine-tuned LLMs or custom heuristic engines to run specialized regression checks and intelligent anomaly detection tailored to your proprietary stack.
+            </div>
+          </div>
+
+          <!-- FAQ 4 -->
+          <div class="faq-item">
+            <button class="faq-question" type="button" aria-expanded="false">
+              <span>What kind of support is included during the 14-day free trial?</span>
+              <span class="faq-icon">▼</span>
+            </button>
+            <div class="faq-answer">
+              All trial users receive full access to 24/7 priority chat support with senior solutions architects, interactive onboarding workflows, and guided architectural walkthroughs.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================================================================== -->
+    <!-- 8. CONVERSION NEWSLETTER BANNER                                      -->
+    <!-- ==================================================================== -->
+    <section class="cta-banner-section">
+      <div class="wrap">
+        <div class="cta-banner">
+          <div class="cta-banner-glow top-left"></div>
+          <div class="cta-banner-glow bottom-right"></div>
+
+          <div class="hero-badge" style="background:rgba(255,255,255,0.15); color:#ffffff; border-color:rgba(255,255,255,0.25); margin-bottom:20px;">
+            <span class="badge-ping" style="background:#ffffff;"></span>
+            <span>Priority Access Available</span>
+          </div>
+
+          <h2 style="font-family:var(--font-display); font-size:clamp(30px, 4vw, 44px); font-weight:800; letter-spacing:-1px; margin-bottom:14px;">
+            Ready to supercharge your engineering workflow?
+          </h2>
+
+          <p style="font-size:17px; opacity:0.9; max-width:540px; margin:0 auto;">
+            Join elite engineering teams shipping high-performance software faster than ever before. No credit card required.
+          </p>
+
+          <form class="cta-form" id="newsletterForm">
+            <input class="cta-input" id="newsletterEmail" type="email" placeholder="Enter your work email..." required aria-label="Work Email" />
+            <button class="cta-banner-btn" type="submit">
+              Claim Access
+            </button>
+          </form>
+
+          <span style="font-size:12.5px; opacity:0.8; display:block;">
+            Instant setup • 14-day free trial • Cancel anytime
+          </span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ====================================================================== -->
+  <!-- 9. GLOBAL UNIFIED FOOTER                                               -->
+  <!-- ====================================================================== -->
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a class="brand" href="index.html">
+            <span class="brand-mark" aria-hidden="true">ϟ</span>
+            Pulse<em>AI</em>
+          </a>
+          <p>
+            Autonomous deployment pipelines and sub-millisecond edge telemetry designed for high-velocity software teams.
+          </p>
+        </div>
+        <div class="footer-col">
+          <h4>Product</h4>
+          <ul>
+            <li><a href="index.html">Overview</a></li>
+            <li><a href="explore.html">Explore Workflows</a></li>
+            <li><a href="plans.html">Pricing &amp; Plans</a></li>
+            <li><a href="about.html">About &amp; Story</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Resources</h4>
+          <ul>
+            <li><a href="explore.html">Workflow Templates</a></li>
+            <li><a href="DESIGN_SYSTEM.md">Design System Spec</a></li>
+            <li><a href="README.md">Documentation</a></li>
+            <li><a href="plans.html#pricing">Compare Tiers</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Syntecxhub Track</h4>
+          <ul>
+            <li><span style="color:var(--muted); font-size:13px;">UI/UX Designing Week 1</span></li>
+            <li><span style="color:var(--muted); font-size:13px;">8pt Spatial Grid System</span></li>
+            <li><span style="color:var(--muted); font-size:13px;">WCAG AAA Accessibility</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>© 2026 Pulse AI. Built for teams that ship.</div>
+        <div style="display:flex; gap:20px;">
+          <a href="about.html">Privacy Policy</a>
+          <a href="about.html">Terms of Service</a>
+          <a href="explore.html">Security Specs</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ====================================================================== -->
+  <!-- 10. FLOATING DESIGN TOKENS SPEC BUTTON & DRAWER                        -->
+  <!-- ====================================================================== -->
+  <button class="floating-tokens-btn" id="openTokensBtn" aria-label="Open Design System Tokens">
+    <span>🎨</span>
+    <span>UI/UX Tokens Spec</span>
+  </button>
+
+  <aside class="tokens-drawer" id="designTokensDrawer" aria-label="Design System Inspector">
+    <div class="tokens-drawer-header">
+      <div>
+        <h3>Design System Spec</h3>
+        <p style="font-size:12px; color:var(--muted);">Click any color token to copy hex code</p>
+      </div>
+      <button class="modal-close-btn" id="closeTokensBtn" aria-label="Close Tokens Drawer">✕</button>
+    </div>
+
+    <h4 style="font-size:13px; font-weight:700; text-transform:uppercase; color:var(--primary); margin-bottom:12px;">
+      Color Tokens (WCAG AAA)
+    </h4>
+    <div class="token-swatches">
+      <div class="token-swatch" data-token-value="#5E54E0">
+        <div class="swatch-color" style="background:#5E54E0;"></div>
+        <div class="swatch-info">
+          <strong>Primary Indigo</strong>
+          <span>#5E54E0</span>
+        </div>
+      </div>
+      <div class="token-swatch" data-token-value="#06B6D4">
+        <div class="swatch-color" style="background:#06B6D4;"></div>
+        <div class="swatch-info">
+          <strong>Accent Cyan</strong>
+          <span>#06B6D4</span>
+        </div>
+      </div>
+      <div class="token-swatch" data-token-value="#9333EA">
+        <div class="swatch-color" style="background:#9333EA;"></div>
+        <div class="swatch-info">
+          <strong>Vibrant Purple</strong>
+          <span>#9333EA</span>
+        </div>
+      </div>
+      <div class="token-swatch" data-token-value="#10B981">
+        <div class="swatch-color" style="background:#10B981;"></div>
+        <div class="swatch-info">
+          <strong>Emerald Success</strong>
+          <span>#10B981</span>
+        </div>
+      </div>
+      <div class="token-swatch" data-token-value="#0F172A">
+        <div class="swatch-color" style="background:#0F172A;"></div>
+        <div class="swatch-info">
+          <strong>Deep Slate Ink</strong>
+          <span>#0F172A</span>
+        </div>
+      </div>
+      <div class="token-swatch" data-token-value="#F8FAFC">
+        <div class="swatch-color" style="background:#F8FAFC;"></div>
+        <div class="swatch-info">
+          <strong>Canvas Wash</strong>
+          <span>#F8FAFC</span>
+        </div>
+      </div>
+    </div>
+
+    <h4 style="font-size:13px; font-weight:700; text-transform:uppercase; color:var(--primary); margin:24px 0 12px;">
+      8-Point Spatial Grid
+    </h4>
+    <div style="font-family:var(--font-mono); font-size:12px; display:grid; gap:8px; background:var(--wash); padding:16px; border-radius:12px; border:1px solid var(--line);">
+      <div>--space-1: 8px (Micro spacing)</div>
+      <div>--space-2: 16px (Card inner padding)</div>
+      <div>--space-3: 24px (Grid column gaps)</div>
+      <div>--space-4: 32px (Container margins)</div>
+      <div>--space-6: 48px (Section sub-breaks)</div>
+      <div>--space-8: 64px (Major vertical flow)</div>
+    </div>
+
+    <h4 style="font-size:13px; font-weight:700; text-transform:uppercase; color:var(--primary); margin:24px 0 12px;">
+      Typography Hierarchy
+    </h4>
+    <div style="font-size:12.5px; display:grid; gap:8px;">
+      <div><strong>Display Hero:</strong> 62px / Plus Jakarta Sans</div>
+      <div><strong>Section Title:</strong> 42px / Plus Jakarta Sans</div>
+      <div><strong>Card Title:</strong> 20px / Plus Jakarta Sans</div>
+      <div><strong>Body Copy:</strong> 15px / DM Sans (Line: 1.6)</div>
+      <div><strong>Code &amp; Tokens:</strong> 12px / JetBrains Mono</div>
+    </div>
+  </aside>
+
+  <!-- ====================================================================== -->
+  <!-- 11. INTERACTIVE MULTI-STEP ONBOARDING MODAL & CONFETTI                -->
+  <!-- ====================================================================== -->
+  <div class="modal-backdrop" id="onboardingModal" role="dialog" aria-modal="true" aria-labelledby="modalStepIndicator">
+    <div class="modal-card">
+      <div id="confettiContainer"></div>
+      <button class="modal-close-btn close-modal-btn" aria-label="Close Modal">✕</button>
+      <div class="step-indicator-bar" id="modalStepIndicator">Step 1 of 3: Choose Workspace Scope</div>
+
+      <!-- Step 1: Choose Workspace -->
+      <div id="modalStep1">
+        <h3 style="font-family:var(--font-display); font-size:22px; font-weight:800; margin-bottom:8px;">
+          Set up your Pulse workspace
+        </h3>
+        <p style="color:var(--muted); font-size:13.5px; margin-bottom:20px;">
+          Select your deployment architecture scale. You can adjust this anytime.
+        </p>
+
+        <div class="workspace-options">
+          <button class="workspace-opt-btn selected" data-workspace="Solo Developer">
+            <div class="workspace-icon">👤</div>
+            <div>
+              <strong style="display:block; font-size:14px; color:var(--ink);">Solo Developer</strong>
+              <span style="font-size:12px; color:var(--muted);">For personal projects and prototype edge deployments.</span>
+            </div>
+          </button>
+          <button class="workspace-opt-btn" data-workspace="Growth Squad">
+            <div class="workspace-icon">👥</div>
+            <div>
+              <strong style="display:block; font-size:14px; color:var(--ink);">Growth Engineering Squad</strong>
+              <span style="font-size:12px; color:var(--muted);">For teams of up to 25 with preview environments &amp; alerts.</span>
+            </div>
+          </button>
+          <button class="workspace-opt-btn" data-workspace="Enterprise Fleet">
+            <div class="workspace-icon">🏢</div>
+            <div>
+              <strong style="display:block; font-size:14px; color:var(--ink);">Enterprise Scale</strong>
+              <span style="font-size:12px; color:var(--muted);">Unlimited clusters, SOC2 Type II, and multi-region SLA.</span>
+            </div>
+          </button>
+        </div>
+      </div>
+
+      <!-- Step 2: Configure Workspace -->
+      <div id="modalStep2" style="display:none;">
+        <h3 style="font-family:var(--font-display); font-size:22px; font-weight:800; margin-bottom:8px;">
+          Configure your team cluster
+        </h3>
+        <p style="color:var(--muted); font-size:13.5px; margin-bottom:20px;">
+          Enter your team name and preferred cloud provider.
+        </p>
+        <form id="onboardingStep2Form">
+          <label style="display:block; font-size:12.5px; font-weight:700; margin-bottom:6px; color:var(--ink);" for="onboardingNameInput">
+            Team / Company Name
+          </label>
+          <input class="modal-input" id="onboardingNameInput" type="text" placeholder="e.g. Acme Engineering" required />
+
+          <label style="display:block; font-size:12.5px; font-weight:700; margin-bottom:6px; color:var(--ink);" for="cloudProviderSelect">
+            Primary Cloud Provider
+          </label>
+          <select class="modal-input" id="cloudProviderSelect" style="background:#ffffff;">
+            <option>Amazon Web Services (AWS EKS)</option>
+            <option>Google Cloud Platform (GKE)</option>
+            <option>Microsoft Azure (AKS)</option>
+            <option>Cloudflare &amp; Edge Workers</option>
+          </select>
+
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-top:20px;">
+            <button class="button secondary" type="button" id="backToStep1Btn">← Back</button>
+            <button class="button" type="submit">Activate Workspace 🚀</button>
+          </div>
+        </form>
+      </div>
+
+      <!-- Step 3: Celebration State -->
+      <div id="modalStep3" style="display:none; text-align:center; padding:12px 0;">
+        <div style="font-size:54px; margin-bottom:12px;">🎉</div>
+        <h3 style="font-family:var(--font-display); font-size:24px; font-weight:800; margin-bottom:8px;">
+          Welcome aboard, <span id="welcomeUserName">Engineer</span>!
+        </h3>
+        <p style="color:var(--muted); font-size:14px; max-width:400px; margin:0 auto 20px;">
+          Your autonomous edge workspace has been provisioned and is ready to accept telemetry streams.
+        </p>
+        <div style="background:var(--wash); border:1px solid var(--line); border-radius:12px; padding:16px; margin-bottom:24px; font-family:var(--font-mono); font-size:12px; text-align:left;">
+          <div style="color:var(--muted); margin-bottom:4px;"># Workspace ID:</div>
+          <div style="color:var(--primary); font-weight:700;">pls_ws_99x412_prod</div>
+          <div style="color:var(--muted); margin-top:10px; margin-bottom:4px;"># CLI Quickstart:</div>
+          <div style="color:var(--ink);">$ npx pulse-cli connect --token=pls_ws_99x412</div>
+        </div>
+        <button class="button close-modal-btn" style="width:100%;">
+          Enter Pulse Dashboard →
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ====================================================================== -->
+  <!-- 12. INTERACTIVE VIDEO DEMO MODAL                                      -->
+  <!-- ====================================================================== -->
+  <div class="modal-backdrop" id="demoModal" role="dialog" aria-modal="true">
+    <div class="demo-modal-card">
+      <div class="demo-player-top">
+        <span>Pulse AI Platform Walkthrough (2:14)</span>
+        <button class="close-demo-btn" style="color:#ffffff; font-size:18px; cursor:pointer;">✕</button>
+      </div>
+      <div class="demo-screen">
+        <button class="play-pulse-btn" id="playPulseBtn" aria-label="Play Demo">▶</button>
+        <h3 style="color:#ffffff; font-family:var(--font-display); font-size:20px; font-weight:700; margin-bottom:6px;">
+          Interactive Platform Demo
+        </h3>
+        <p style="color:#94a3b8; font-size:13.5px; max-width:420px;" id="demoStatusText">
+          Click play to simulate live multi-region deployment and autonomous self-healing telemetry.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ====================================================================== -->
+  <!-- 13. TOAST NOTIFICATION                                                 -->
+  <!-- ====================================================================== -->
+  <div class="toast-notice" id="toastNotification" role="alert" aria-live="polite">
+    <span id="toastMessage">Notification message</span>
+  </div>
+
+</body>
+</html>
